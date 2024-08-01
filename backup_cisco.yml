@@ -1,15 +1,9 @@
 ---
-- name: config backup of network devices
+- name: Cisco IOS Show Version
   hosts: all
-  gather_facts: no
-  tasks:
-  - name: get timestamp
-    shell: "date +%Y%m%d-%H-%M-%S"
-    register: timestamp
+  collection: cisco.ios
 
-  - name: backup ios config
+  tasks:
+  - name: Ensure apache is at the latest version
     ios_command:
-            backup: yes
-            backup_options:
-                    filename: "running-config-{{ timestamp.stdout }}"
-                    dir_path: "data/{{ inventory_hostname }}"
+      commands: show version
