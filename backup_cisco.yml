@@ -4,5 +4,5 @@
 
   tasks:
   - name: Blah
-    cisco.ios.ios_command:
+    cisco.ios:
       commands: show version
