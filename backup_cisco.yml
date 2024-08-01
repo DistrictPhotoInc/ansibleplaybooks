@@ -1,8 +1,15 @@
 ---
-
-- hosts: all
-  gather_facts: false
+- name: config backup of network devices
+  hosts: all
+  gather_facts: no
   tasks:
-    - name: run show version on remote devices
-        ios_command:
-          commands: show version
+  - name: get timestamp
+    shell: "date +%Y%m%d-%H-%M-%S"
+    register: timestamp
+
+  - name: backup ios config
+    ios_command:
+            backup: yes
+            backup_options:
+                    filename: "running-config-{{ timestamp.stdout }}"
+                    dir_path: "data/{{ inventory_hostname }}"
