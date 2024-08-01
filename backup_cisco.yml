@@ -6,6 +6,6 @@
   -name: cisco.ios
   tasks:
     - name: show ios version
-      cisco.ios.ios_command:
+      cisco.ios:
        commands:
        - show version
