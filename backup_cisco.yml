@@ -4,5 +4,6 @@
   gather_facts: false
   tasks:
     - name: show ios version
-      ios_command:
-       commands: show version
+      cisco.ios.ios_command:
+       commands:
+       - show version
