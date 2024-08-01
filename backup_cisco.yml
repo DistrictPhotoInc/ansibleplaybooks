@@ -2,7 +2,6 @@
 - name: Cisco IOS Show Version
   hosts: all
 
-  tasks:
-  - name: Blah
-    cisco.ios:
-      commands: show version
+- name: Run show version on remote devices
+  cisco.ios.ios_command:
+    commands: show version
