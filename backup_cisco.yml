@@ -1,9 +1,8 @@
 ---
 - name: Cisco IOS Show Version
   hosts: all
-  collection: cisco.ios
 
   tasks:
-  - name: Ensure apache is at the latest version
+  - name: Blah
     ios_command:
       commands: show version
