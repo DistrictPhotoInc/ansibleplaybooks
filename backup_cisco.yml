@@ -5,4 +5,4 @@
   tasks:
     - name: show ios version
       ios_command:
-        commands: show version
+       commands: show version
