@@ -2,10 +2,8 @@
 
 - hosts: all
   gather_facts: false
-  collections:
-  -name: cisco.ios
   tasks:
     - name: show ios version
-      cisco.ios:
+      cisco.ios.cisco_command:
        commands:
        - show version
